@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buoi6</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="txtInt"></label>
+        <input type="text" id="txtInt" placeholder="nhap 1 so ban chon...">
+        <br>
+        <button type="submit" onclick="(inputInt(txtInt))">Submit</button>
+    </form>
+    <script type="text/javascript">
+        function inputInt(strInt) {
+
+            let regInt = /^[0-9]+$/;
+            if (strInt.value == "") {
+                alert("Ban khong duoc de trong")
+            }
+            else {
+
+                if (!strInt.value.match(regInt)) {
+                    alert("Chi duoc nhap so nguyen duong");
+                }
+                else {
+                    switch (parseInt(strInt.value)) {
+                        case 1:
+                            window.open("https://quantrimang.com");
+                            break;
+                        case 2:
+                            window.open("https://download.com");
+                            break;
+                        case 3:
+                            window.open("https://vndoc.com");
+                            break;
+                        default:
+                            window.open("https://meta.vn");
+
+
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
