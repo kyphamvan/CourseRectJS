@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+</head>
+<body>
+    <input type="text" id="txtArr" onkeypress="return isNumber(event)" placeholder="Nhap phan tu cua mang (so nguyen)...">
+    <button type="button" onclick="addSum();">Xac Nhan</button>
+
+    <h1 class="heading" id="firstH">Hello</h1>
+    <button type="button" onclick=" updateElement()">Update</button>
+    <script>
+        addSum = () =>{
+            let strArr = document.getElementById('txtArr').value;
+            let arrNumber = strArr.split("");
+            let arrEs = arrNumber.length;
+            let sum = 0;
+            arrNumber.forEach(element => {
+                let intE = parseInt(element);
+                sum += intE;
+            });
+            document.write("Mang ban nhap co : "+arrEs+" phan tu. Tong la:"+sum);
+
+        };
+        function isNumber(e) {
+            let charcode = (e.which) ? e.which : event.charcode;
+            if(charcode > 31 && (charcode < 48 || charcode > 57))
+            return false;
+            return true;
+        }
+        updateElement = () =>{
+            document.getElementById('firstH').innerHTML = "Hello 2";
+            document.getElementById('firstH').outerHTML = "<h3 id='firstH'>Hello 2</h3>"
+            document.getElementById('firstH').style.color = "red";
+        }
+    </script>
+</body>
+</html>
